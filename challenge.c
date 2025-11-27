@@ -1,22 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void add(int arr[], int length);
-void delete(int arr[], int length);
-void modify(int arr[], int length);
-void search(int arr[], int length);
-void sort(int arr[], int length);
+void add(int arr[], int c,  int *length);
+void delete(int arr[], int c, int *length);
+void modify(int arr[], int c, int *length);
+void search(int arr[], int c, int *length);
+void sort(int arr[], int c, int *length);
 
 int main(void)
 {
     int a;
     int b;
+    int c = 100;
     printf("Enter the number of elements in the array: \n");
     if (scanf("%d", &a) != 1)
     {
         return 1;
     }
-    int arr[a];
+    int arr[c];
     printf("Enter %d elements:\n", a);
     for (int i = 0; i < a; i++)
     {
@@ -40,21 +41,22 @@ int main(void)
         switch (b)
         {
             case 1:
-                add(arr, a);
+                add(arr, c, &a);
                 break;
             case 2:
-                delete(arr, a);
+                delete(arr, c, &a);
                 break;
             case 3:
-                modify(arr, a);
+                modify(arr, c, &a);
                 break;
             case 4:
-                search(arr, a);
+                search(arr, c, &a);
                 break;
             case 5:
-                sort(arr, a);
+                sort(arr, c, &a);
                 break;
         }
+        printf("\n");
     } while(b != 0);
     if (b == 0)
     {
@@ -62,7 +64,7 @@ int main(void)
     }
 }
 
-void add(int arr[], int length)
+void add(int arr[], int c, int *length)
 {
     int a;
     int b;
@@ -76,40 +78,35 @@ void add(int arr[], int length)
     {
         exit(1);
     }
-    for (int i = 0; i < length; i++)
+    for (int i = *length; i > b; i--)
     {
-
+        arr[i] = arr[i - 1];
+    }
+    arr[b] = a;
+    (*length)++;
+    printf("Array now:");
+    for(int i = 0; i < *length; i++)
+    {
+        printf(" %d", arr[i]);
     }
 }
 
-void delete(int arr[], int length)
+void delete(int arr[], int c, int *length)
 {
-   for (int i = 0; i < length; i++)
-    {
-
-    }
+   
 }
 
-void modify(int arr[], int length)
+void modify(int arr[], int c, int *length)
 {
-   for (int i = 0; i < length; i++)
-    {
-        
-    }
+   
 }
 
-void search(int arr[], int length)
+void search(int arr[], int c, int *length)
 {
-   for (int i = 0; i < length; i++)
-    {
-        
-    }
+   
 }
 
-void sort(int arr[], int length)
+void sort(int arr[], int c, int *length)
 {
-   for (int i = 0; i < length; i++)
-    {
-        
-    }
+   
 }
