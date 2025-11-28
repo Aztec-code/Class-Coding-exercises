@@ -56,7 +56,6 @@ int main(void)
                 sort(arr, c, &a);
                 break;
         }
-        printf("\n");
     } while(b != 0);
     if (b == 0)
     {
@@ -89,6 +88,7 @@ void add(int arr[], int c, int *length)
     {
         printf(" %d", arr[i]);
     }
+    printf("\n");
 }
 
 void delete(int arr[], int c, int *length)
@@ -109,6 +109,7 @@ void delete(int arr[], int c, int *length)
     {
         printf(" %d", arr[i]);
     }
+    printf("\n");
 }
 
 void modify(int arr[], int c, int *length)
@@ -127,7 +128,7 @@ void modify(int arr[], int c, int *length)
     }
     if (a < 0 || a >= *length)
     {
-        printf("Invalid position.\n");
+        printf("Invalid position!\n");
         return;
     }
     arr[a] = b;
@@ -136,6 +137,7 @@ void modify(int arr[], int c, int *length)
     {
         printf(" %d", arr[i]);
     }
+    printf("\n");
 }
 
 void search(int arr[], int c, int *length)
@@ -156,7 +158,7 @@ void search(int arr[], int c, int *length)
             d = 1;
         }
     }
-    if (d = 1)
+    if (d == 1)
     {
         printf("Element found at position %d", position);
     }
@@ -164,15 +166,16 @@ void search(int arr[], int c, int *length)
     {
         printf("Element not found.");
     }
+    printf("\n");
 }
 
 void sort(int arr[], int c, int *length)
 {
-    int swap;
+    int swap = 1;
     while (swap != 0)
     {
         swap = 0;
-        for (int i = 0; i < *length; i++)
+        for (int i = 0; i < (*length - 1); i++)
         {
             if (arr[i] > arr[i + 1])
             {
@@ -184,9 +187,11 @@ void sort(int arr[], int c, int *length)
             }
         }
     }
+    printf("Array sorted in ascending order.\n");
     printf("Array now:");
     for(int i = 0; i < *length; i++)
     {
         printf(" %d", arr[i]);
     }
+    printf("\n");
 }
