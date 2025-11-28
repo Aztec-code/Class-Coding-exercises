@@ -93,12 +93,49 @@ void add(int arr[], int c, int *length)
 
 void delete(int arr[], int c, int *length)
 {
-   
+    int b;
+    printf("Enter position to delete (0-based): \n");
+    if (scanf("%d", &b) != 1)
+    {
+        exit(1);
+    }
+    for (int i = b; i < *length; i++)
+    {
+        arr[i] = arr[i + 1];
+    }
+    (*length)--;
+    printf("Array now:");
+    for(int i = 0; i < *length; i++)
+    {
+        printf(" %d", arr[i]);
+    }
 }
 
 void modify(int arr[], int c, int *length)
 {
-   
+    int a;
+    int b;
+    printf("Enter position to modify (0-based): \n");
+    if (scanf(" %d", &a) != 1)
+    {
+        exit(1);
+    }
+    printf("Enter new value: \n");
+    if (scanf(" %d", &b) != 1)
+    {
+        exit(1);
+    }
+    if (a < 0 || a >= *length)
+    {
+        printf("Invalid position.\n");
+        return;
+    }
+    arr[a] = b;
+    printf("Array now:");
+    for(int i = 0; i < *length; i++)
+    {
+        printf(" %d", arr[i]);
+    }
 }
 
 void search(int arr[], int c, int *length)
