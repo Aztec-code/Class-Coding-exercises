@@ -140,10 +140,53 @@ void modify(int arr[], int c, int *length)
 
 void search(int arr[], int c, int *length)
 {
-   
+    int a;
+    int position;
+    printf("Enter element to search for: \n");
+    if (scanf(" %d", &a) != 1)
+    {
+        exit(1);
+    }
+    int d = 0;
+    for (int i = 0; i < *length; i++)
+    {
+        if (arr[i] == a)
+        {
+            position = i;
+            d = 1;
+        }
+    }
+    if (d = 1)
+    {
+        printf("Element found at position %d", position);
+    }
+    else
+    {
+        printf("Element not found.");
+    }
 }
 
 void sort(int arr[], int c, int *length)
 {
-   
+    int swap;
+    while (swap != 0)
+    {
+        swap = 0;
+        for (int i = 0; i < *length; i++)
+        {
+            if (arr[i] > arr[i + 1])
+            {
+                int tmp;
+                tmp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = tmp;
+                swap++;
+            }
+        }
+    }
+    printf("Array now:");
+    for(int i = 0; i < *length; i++)
+    {
+        printf(" %d", arr[i]);
+    }
 }
