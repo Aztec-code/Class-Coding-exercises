@@ -9,6 +9,7 @@ void sort(int arr[], int c, int *length);
 
 int main(void)
 {
+    //changed nothing
     int a;
     int b;
     int c = 100;
