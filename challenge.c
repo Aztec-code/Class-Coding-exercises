@@ -99,17 +99,24 @@ void delete(int arr[], int c, int *length)
     {
         exit(1);
     }
-    for (int i = b; i < *length; i++)
+    if (b >= *length)
     {
-        arr[i] = arr[i + 1];
+        printf("Invalid position!\n");
     }
-    (*length)--;
-    printf("Array now:");
-    for(int i = 0; i < *length; i++)
+    else
     {
-        printf(" %d", arr[i]);
+        for (int i = b; i < *length; i++)
+        {
+            arr[i] = arr[i + 1];
+        }
+        (*length)--;
+        printf("Array now:");
+        for(int i = 0; i < *length; i++)
+        {
+            printf(" %d", arr[i]);
+        }
+        printf("\n");
     }
-    printf("\n");
 }
 
 void modify(int arr[], int c, int *length)
